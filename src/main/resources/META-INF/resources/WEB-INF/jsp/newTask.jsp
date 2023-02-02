@@ -7,6 +7,7 @@
     <link href="webjars/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
 </head>
 <body>
+<%@include file="common/navigation.jspf" %>
 <div class="container">
     <h3>Add a new Task</h3>
     <%--@elvariable id="task" type="bean"--%>
