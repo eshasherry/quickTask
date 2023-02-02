@@ -1,12 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<%@include file="common/header.jspf"%>
 <%@include file="common/navigation.jspf" %>
 <div class="container">
 <h3>Welcome ${username}</h3>

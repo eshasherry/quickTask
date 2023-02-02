@@ -1,12 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>New Task</title>
-    <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="webjars/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
-</head>
-<body>
+<%@include file="common/header.jspf"%>
 <%@include file="common/navigation.jspf" %>
 <div class="container">
     <h3>Add a new Task</h3>
