@@ -1,7 +1,7 @@
-package com.app.task.controller;
+package com.app.quickTask.controller;
 
-import com.app.task.entity.Task;
-import com.app.task.service.TaskService;
+import com.app.quickTask.entity.Task;
+import com.app.quickTask.service.TaskService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

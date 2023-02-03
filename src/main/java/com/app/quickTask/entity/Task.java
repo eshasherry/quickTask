@@ -1,4 +1,4 @@
-package com.app.task.entity;
+package com.app.quickTask.entity;
 
 import jakarta.validation.constraints.Size;
 import org.springframework.stereotype.Component;

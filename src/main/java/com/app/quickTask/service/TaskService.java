@@ -1,11 +1,10 @@
-package com.app.task.service;
+package com.app.quickTask.service;
 
-import com.app.task.entity.Task;
+import com.app.quickTask.entity.Task;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 

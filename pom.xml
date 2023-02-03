@@ -11,7 +11,7 @@
     <groupId>com.app</groupId>
     <artifactId>quickTask</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>task</name>
+    <name>quickTask</name>
     <description>task</description>
     <properties>
         <java.version>17</java.version>
@@ -24,6 +24,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
         <dependency>
