@@ -20,7 +20,12 @@ public class TaskController {
     public String login(){
         return "login";
     }
-
+    @RequestMapping(value = "/")
+    public String listTasksHome( ModelMap map){
+        List<Task> tasks = taskService.getTasks();
+        map.put("tasks", tasks);
+        return "listTasks";
+    }
     @RequestMapping(value = "/listTasks")
     public String listTasks( ModelMap map){
         List<Task> tasks = taskService.getTasks();
