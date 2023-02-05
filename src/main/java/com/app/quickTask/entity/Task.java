@@ -1,13 +1,19 @@
 package com.app.quickTask.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
 @Component
+@Entity
 public class Task {
 
+    @Id
+    @GeneratedValue
     private int id;
     private String username;
     @Size(min = 5, message = "Description should be at least 5 characters")

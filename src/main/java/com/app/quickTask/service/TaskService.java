@@ -26,7 +26,7 @@ public class TaskService {
     }
 
     public void addTask(Task task, String username){
-        Task newTask = new Task(countId++, username,task.getDescription(), LocalDate.now().plusMonths(1), task.isComplete());
+        Task newTask = new Task(countId++, username,task.getDescription(), task.getCompletionDate(), task.isComplete());
         tasks.add(newTask);
     }
 
