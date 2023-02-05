@@ -14,17 +14,20 @@ public class TaskService {
     private static List<Task> tasks = new ArrayList<>();
     private static int countId = 1;
     static {
-        tasks.add(new Task(countId++, "Complete website", LocalDate.now().plusMonths(2), false));
-        tasks.add(new Task(countId++, "Practice LeetCode", LocalDate.now().plusMonths(12), true));
+        tasks.add(new Task(countId++,"esha", "Complete website", LocalDate.now().plusMonths(2), false));
+        tasks.add(new Task(countId++,"esha", "Practice LeetCode", LocalDate.now().plusMonths(12), true));
 
     }
     public List<Task> getTasks(){
         return tasks;
     }
+    public List<Task >getTasksByusername(String username){
+        return tasks.stream().filter(task -> task.getUsername().equalsIgnoreCase(username)).toList();
+    }
 
-    public void addTask(String description, boolean isCompleted){
-        Task task = new Task(countId++, description, LocalDate.now().plusMonths(1), isCompleted);
-        tasks.add(task);
+    public void addTask(Task task, String username){
+        Task newTask = new Task(countId++, username,task.getDescription(), LocalDate.now().plusMonths(1), task.isComplete());
+        tasks.add(newTask);
     }
 
     public void removeTask(int id){

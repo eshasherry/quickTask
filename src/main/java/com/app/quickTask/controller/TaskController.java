@@ -4,6 +4,8 @@ import com.app.quickTask.entity.Task;
 import com.app.quickTask.service.TaskService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -22,13 +24,16 @@ public class TaskController {
     }
     @RequestMapping(value = "/")
     public String listTasksHome( ModelMap map){
-        List<Task> tasks = taskService.getTasks();
+        String username = getLoggenInUsername();
+        List<Task> tasks = taskService.getTasksByusername(username);
         map.put("tasks", tasks);
+        map.put("username", username);
         return "listTasks";
     }
     @RequestMapping(value = "/listTasks")
     public String listTasks( ModelMap map){
-        List<Task> tasks = taskService.getTasks();
+        String username = getLoggenInUsername();
+        List<Task> tasks = taskService.getTasksByusername(username);
         map.put("tasks", tasks);
         return "listTasks";
     }
@@ -44,7 +49,8 @@ public class TaskController {
         if(result.hasErrors()){
             return "newTask";
         }
-        taskService.addTask(task.getDescription(), task.isComplete());
+        String username = getLoggenInUsername();
+        taskService.addTask(task, username);
         return "redirect:listTasks";
     }
 
@@ -68,5 +74,9 @@ public class TaskController {
         }
         taskService.updateTask(task);
         return "redirect:listTasks";
+    }
+    private String getLoggenInUsername(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return authentication.getName();
     }
 }

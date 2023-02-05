@@ -9,6 +9,7 @@ import java.time.LocalDate;
 public class Task {
 
     private int id;
+    private String username;
     @Size(min = 5, message = "Description should be at least 5 characters")
     private String description;
     private LocalDate completionDate;
@@ -21,8 +22,9 @@ public class Task {
         this.complete = complete;
     }
 
-    public Task(int id, String description, LocalDate completionDate, boolean complete) {
+    public Task(int id, String username, String description, LocalDate completionDate, boolean complete) {
         this.id = id;
+        this.username = username;
         this.description = description;
         this.completionDate = completionDate;
         this.complete = complete;
@@ -34,6 +36,14 @@ public class Task {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getDescription() {
